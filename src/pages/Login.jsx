@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 function Login() {
     const form = useForm({
         defaultValues: {
-            name: "",
-            name: "",
+            firstname: "",
+            lastname: "",
             email: "default@gmail.com",
             password: ""
 
@@ -21,7 +21,7 @@ function Login() {
         <div className="w-screen h-screen bg-[url('https://i.redd.it/7aadu9ocfvx51.jpg')] bg-cover flex items-center justify-center">
             <div className="w-[90%] max-w-[500px] h-auto p-6 text-white font-bold flex flex-col items-center justify-center backdrop-blur-md bg-opacity-10 bg-white rounded-lg">
                 <form className="w-full space-y-6" onSubmit={handleSubmit(onSubmit)} noValidate>
-                    <h1 className="text-center text-3xl">Log in</h1>
+                    <h1 className="text-center text-3xl">Regiter Form</h1>
                     <div className="flex flex-col">
                         <label className="mb-1 text-sm">First Name:</label>
                         <input className="w-full h-[40px] focus:outline-none rounded-md backdrop-blur-md bg-opacity-10 bg-white px-4" {...register("firstname",
@@ -36,7 +36,7 @@ function Login() {
                                 }
                             }
                         )} />
-                        {errors.firstname?.message && <p>{errors.firstname.message}</p>}
+                        {errors.firstname?.message && <p className='text-red-600 text-sm'>{errors.firstname.message}</p>}
                     </div>
                     <div className="flex flex-col">
                         <label className="mb-1 text-sm">Last Name:</label>
@@ -48,7 +48,7 @@ function Login() {
                                 }
                             }
                         )} />
-                        {errors.lastname?.message && <p>{errors.lastname.message}</p>}
+                        {errors.lastname?.message && <p className='text-red-600 text-sm'>{errors.lastname.message}</p>}
                     </div>
                     <div className="flex flex-col">
                         <label className="mb-1 text-sm">Email:</label>
@@ -60,7 +60,7 @@ function Login() {
                                 }
                             }
                         )} />
-                        {errors.email?.message && <p>{errors.email.message}</p>}
+                        {errors.email?.message && <p className='text-red-600 text-sm'>{errors.email.message}</p>}
                     </div>
                     <div className="flex flex-col">
                         <label className="mb-1 text-sm">Password:</label>
@@ -76,7 +76,7 @@ function Login() {
                                 }
                             }
                         )} />
-                        {errors.password?.message && <p className='text-white'>{errors.password.message}</p>}
+                        {errors.password?.message && <p className='text-red-600 text-sm'>{errors.password.message}</p>}
                     </div>
                     <div className="flex flex-col space-y-2">
                         <label className="text-sm">Gender:</label>
